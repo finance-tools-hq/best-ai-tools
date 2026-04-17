@@ -19,7 +19,7 @@ header {
     text-align: center;
     padding: 80px 20px; /* 여백을 조금 더 주어 여유 있게 설정 */
     background: linear-gradient(135px, #5d5dff, #3b3bff); /* 배경을 진한 보라색 그라데이션으로 변경 */
-    color: #ffffff; /* 글자색은 순백색으로 유지 (배경이 진해졌으므로 잘 보임) */
+    color: #5D5DFF; /* 글자색은 순백색으로 유지 (배경이 진해졌으므로 잘 보임) */
 }
 
 header h1 {
