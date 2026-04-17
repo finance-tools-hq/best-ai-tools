@@ -169,30 +169,40 @@ footer {
     margin: 0 10px;
 }
 
-/* 1. 배너 구역 최적화: 이미지는 숨기고 텍스트는 중앙 정렬 */
-.banner, .main-banner, .banner-content {
-    display: block !important; /* 구역 자체는 다시 보이게 설정 */
-    text-align: center;
-    padding: 20px 0; /* 이미지 대신 적절한 여백 부여 */
-    background: none !important; /* 배경 이미지 제거 */
-}
-
-/* 2. 모든 페이지에서 <img> 태그만 골라내서 박멸 */
-img {
+/* 1. 모든 이미지를 무조건 숨기던 코드를 제거하거나 아래처럼 수정하세요 */
+/* 리뷰 상세 페이지의 불필요한 이미지들만 숨깁니다 */
+.content-body img, 
+.container > div > img {
     display: none !important;
 }
 
-/* 3. 이미지가 사라져서 텍스트가 너무 위로 붙는 현상 방지 */
-.category-section {
-    margin-top: 40px;
+/* 2. 메인 배너 구역 설정: 배경 사진이 다시 보이도록 복구 */
+.banner, .main-banner {
+    display: flex !important; /* 또는 block */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px; /* 배너 높이 확보 */
+    
+    /* 배경 사진 설정 (본인의 이미지 경로로 확인 필수) */
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/main-banner.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    
+    color: white !important; /* 배경 위 글자는 다시 흰색으로 */
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5); /* 글자 가독성 확보 */
 }
 
-/* 4. 배너 내 텍스트 가독성 (이미지가 없으므로 어두운 색으로 변경) */
-.banner h2, .banner-content h2 {
-    color: #333 !important;
-    margin-bottom: 10px;
+/* 3. 배너 안의 텍스트 색상 강제 지정 (사진 위에서 잘 보이게) */
+.banner h1, .banner h2, .banner p {
+    color: #ffffff !important;
 }
 
-.banner p, .banner-content p {
-    color: #666 !important;
+/* 4. 만약 배너가 <img> 태그 방식이라면 아래 코드를 추가하세요 */
+.banner img, .main-banner img {
+    display: block !important; /* 배너 안의 이미지만 예외적으로 허용 */
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
 }
