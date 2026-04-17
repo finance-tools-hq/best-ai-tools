@@ -169,24 +169,27 @@ footer {
     margin: 0 10px;
 }
 
-/* 사이트 내의 모든 배너 및 리뷰 상단 이미지 강제 숨김 */
+/* 다른 콘텐츠는 건드리지 않고, 특정 이미지들만 골라서 숨깁니다 */
 
-/* 1. 메인 페이지의 배너 섹션 숨기기 */
-.banner, 
-.main-banner, 
-.banner-content {
+/* 1. 메인 페이지 배너 구역만 숨기기 (글자는 남기고 이미지만 숨김) */
+.banner img, 
+.main-banner img,
+.banner-content img {
     display: none !important;
 }
 
-/* 2. 상세 리뷰 페이지 상단의 이미지 영역 숨기기 */
-/* 보통 <div> 태그 안에 <img>가 들어있는 구조를 타겟팅합니다 */
-.container img {
+/* 2. 상세 리뷰 페이지 내의 이미지들만 골라서 숨기기 */
+/* .container 전체를 숨기면 글자까지 사라지므로, 그 안의 img 태그만 타겟팅합니다 */
+.content-body img,
+.container > div > img {
     display: none !important;
 }
 
-/* 3. 만약 버튼 내의 작은 아이콘까지 사라진다면 아래 코드로 대체하세요 */
-/* 상세 페이지의 특정 배너 이미지들만 골라서 숨깁니다 */
+/* 3. 혹시 모를 레이아웃 깨짐 방지: 숨겨진 이미지 자리에 생기는 빈 공간 제거 */
 img[src*="banner"], 
 img[src*="top-ai-tools"] {
     display: none !important;
+    height: 0;
+    margin: 0;
+    padding: 0;
 }
