@@ -29,11 +29,14 @@ header h1 {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* 은은한 그림자로 가독성 추가 */
 }
 
+/* 헤더 부제목 스타일 수정 */
 header p {
     margin-top: 15px;
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.9); /* 부제목은 살짝 투명도를 주어 세련되게 표현 */
-    font-weight: 400;
+    color: #444444; /* 아예 안 보이는 흰색 대신 진한 회색으로 변경 */
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
 }
 
 header h1 { margin: 0; font-size: 2.5rem; }
