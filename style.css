@@ -169,27 +169,30 @@ footer {
     margin: 0 10px;
 }
 
-/* 다른 콘텐츠는 건드리지 않고, 특정 이미지들만 골라서 숨깁니다 */
+/* 1. 배너 구역 최적화: 이미지는 숨기고 텍스트는 중앙 정렬 */
+.banner, .main-banner, .banner-content {
+    display: block !important; /* 구역 자체는 다시 보이게 설정 */
+    text-align: center;
+    padding: 20px 0; /* 이미지 대신 적절한 여백 부여 */
+    background: none !important; /* 배경 이미지 제거 */
+}
 
-/* 1. 메인 페이지 배너 구역만 숨기기 (글자는 남기고 이미지만 숨김) */
-.banner img, 
-.main-banner img,
-.banner-content img {
+/* 2. 모든 페이지에서 <img> 태그만 골라내서 박멸 */
+img {
     display: none !important;
 }
 
-/* 2. 상세 리뷰 페이지 내의 이미지들만 골라서 숨기기 */
-/* .container 전체를 숨기면 글자까지 사라지므로, 그 안의 img 태그만 타겟팅합니다 */
-.content-body img,
-.container > div > img {
-    display: none !important;
+/* 3. 이미지가 사라져서 텍스트가 너무 위로 붙는 현상 방지 */
+.category-section {
+    margin-top: 40px;
 }
 
-/* 3. 혹시 모를 레이아웃 깨짐 방지: 숨겨진 이미지 자리에 생기는 빈 공간 제거 */
-img[src*="banner"], 
-img[src*="top-ai-tools"] {
-    display: none !important;
-    height: 0;
-    margin: 0;
-    padding: 0;
+/* 4. 배너 내 텍스트 가독성 (이미지가 없으므로 어두운 색으로 변경) */
+.banner h2, .banner-content h2 {
+    color: #333 !important;
+    margin-bottom: 10px;
+}
+
+.banner p, .banner-content p {
+    color: #666 !important;
 }
