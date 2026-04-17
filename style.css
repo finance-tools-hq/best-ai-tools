@@ -8,3 +8,9 @@ h1 { color: #1a73e8; }
 h3 { margin: 15px 0 10px; }
 .btn { display: inline-block; background: #1a73e8; color: white; padding: 10px 15px; border-radius: 5px; text-decoration: none; margin-top: 15px; font-size: 14px; }
 .btn:hover { background: #1557b0; }
+.comparison-table { margin-bottom: 50px; overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+th, td { padding: 15px; border-bottom: 1px solid #eee; text-align: center; }
+th { background-color: #1a73e8; color: white; }
+tr:hover { background-color: #f8f9fa; }
+.table-btn { background: #34a853; color: white; padding: 5px 10px; border-radius: 4px; text-decoration: none; font-size: 13px; }
